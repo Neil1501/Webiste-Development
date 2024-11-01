@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iFortify Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <!-- Login Form Container -->
+  <div class="login-container">
+    <h2>Login to iFortify</h2>
+    <form id="loginForm" onsubmit="return validateLogin()">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function validateLogin() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const validNames = ["neil", "thabo"];
+      const validEmail = "ifortify@gmail.com";
+      const validPassword = "mine1234";
+
+      if (validNames.includes(name.toLowerCase()) && email === validEmail && password === validPassword) {
+        window.location.href = "ifortify.html";
+        return false;
+      } else {
+        alert("Access Denied: Incorrect login details.");
+        return false;
+      }
+    }
+  </script>
+
+</body>
+</html>
